@@ -9,7 +9,9 @@
 
 import { GraphQLList as List, GraphQLString as StringType } from 'graphql';
 import AdminSiteType from '../types/AdminSiteType';
+import keystone from 'keystone';
 
+const AdminSite = keystone.lists["AdminSite"]; 
 const items = [];
 
 const addsite = {
@@ -17,7 +19,11 @@ const addsite = {
   args: {
     siteName: { type: StringType },
   },
-  resolve: (value, { siteName }) => AdminSite.create({ name: siteName }),
+  resolve (value, { siteName }){
+    var adminSite = new AdminSite.model();
+    adminSite.name = siteName;
+    adminSite.save();    
+  }
 };
 
 export default addsite;

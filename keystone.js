@@ -1,3 +1,6 @@
+// import mySchema from './data/schema';
+// import expressGraphQL from 'express-graphql';
+
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
@@ -68,6 +71,17 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 
 keystone.start();
 
-// start graphql
-require('./graphqlServer');
+require("./graphqlServer");
 
+// const cors = require('cors');
+// //
+// // Register API middleware
+// // -----------------------------------------------------------------------------
+// const graphqlMiddleware = expressGraphQL(req => ({
+// 	mySchema,
+//   graphiql: __DEV__,
+//   rootValue: { request: req },
+//   pretty: __DEV__,
+// }));
+
+// app.use('/graphql',cors(), graphqlMiddleware);

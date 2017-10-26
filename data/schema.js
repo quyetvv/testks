@@ -10,20 +10,22 @@ import {
 
 
 import adminsites from './queries/adminsite';
-
+import addSite from './queries/addsite';
+import news from './queries/news';
 
 const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'QuerySuperDot',
         fields: {          
-            adminsites          
+            adminsites,
+            news
         },
     }),
-    // mutation: new GraphQLObjectType({
-    //     name: 'Mutations',
-    //     fields: {
-    //         // addSite,
-    //     },
-    // }),
+    mutation: new GraphQLObjectType({
+        name: 'Mutations',
+        fields: {
+            addSite,
+        },
+    }),
 });
 export default schema;
