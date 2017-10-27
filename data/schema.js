@@ -11,6 +11,7 @@ import {
 import intl from './queries/intl';
 import adminsites from './queries/adminsite';
 import addSite from './queries/addsite';
+import postList from './queries/postList';
 import news from './queries/news';
 import pageLayout from './queries/pageLayout';
 
@@ -22,7 +23,8 @@ const schema = new GraphQLSchema({
             intl,
             adminsites,
             news,
-            pageLayout
+            pageLayout,
+            postList
         },
     }),
     mutation: new GraphQLObjectType({

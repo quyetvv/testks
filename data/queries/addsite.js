@@ -22,7 +22,7 @@ const addsite = {
   resolve (value, { siteName }){
     var adminSite = new AdminSite.model();
     adminSite.name = siteName;
-    adminSite.save();    
+    adminSite.save();
   }
 };
 
