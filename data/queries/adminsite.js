@@ -18,6 +18,7 @@ let items = [];
 const adminsites = {
   type: new List(AdminSiteType),
   resolve() {      
+    console.log("request admin sites");
     return AdminSite.model.find();
   },
 };

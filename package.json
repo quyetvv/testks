@@ -23,6 +23,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "babel-node --presets es2015 --inspect keystone.js"
+    "start": "babel-node --presets es2015 keystone.js",
+    "debug": "babel-node --presets es2015 --inspect keystone.js"
   }
 }
