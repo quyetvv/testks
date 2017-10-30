@@ -30,8 +30,9 @@ exports.create = {
 	City: cities
 }
 
-AdminSite.add({	
+AdminSite.add({
 	name: { type: String, required: true },
+	domains: { type: Types.TextArray , required: false },
 	country: { type: Types.Select, options: _.pluck(countries, 'name') },
 	city: { type: Types.Relationship, ref: 'City', filters: { country: ':country' }}
 });

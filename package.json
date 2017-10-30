@@ -3,27 +3,30 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "4.0.0-beta.7",
-    "lodash": "^4.13.1",
-    "pug": "2.0.0-beta11",
-    "dotenv": "4.0.0",
-    "keystone-email": "1.0.5",
-    "async": "2.1.4",
     "apollo-server-express": "^1.2.0",
-    "graphql": "^0.11.7",
+    "async": "2.1.4",
+    "cors": "^2.8.4",
+    "dotenv": "4.0.0",
     "express-graphql": "^0.6.11",
-    "cors": "^2.8.4"
+    "graphql": "^0.11.7",
+    "keystone": "4.0.0-beta.7",
+    "keystone-email": "1.0.5",
+    "lodash": "^4.13.1",
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-watch": "^2.0.7",
     "eslint": "3.15.0",
     "eslint-config-keystone": "3.0.0",
     "eslint-plugin-react": "^5.1.1",
-    "babel-cli": "^6.0.0",
-    "babel-preset-es2015": "^6.0.0"
+    "nodemon": "^1.12.1"
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "babel-node --presets es2015 keystone.js",
+    "start": "babel-watch --presets es2015 keystone.js",
     "debug": "babel-node --presets es2015 --inspect keystone.js"
   }
 }

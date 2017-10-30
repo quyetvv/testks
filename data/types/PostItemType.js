@@ -26,6 +26,7 @@ const PostItemType = new ObjectType({
   name: 'PostItem',
   fields: {
     title: { type: new NonNull(ID) },
+    slug: {type: StringType},
     state: { type: StringType },
     author: { type: StringType },
     publishedDate: {type: StringType},

@@ -27,12 +27,14 @@ const intl = {
   type: new List(IntlMessageType),
   args: {
     locale: { type: new NonNull(StringType) },
+    siteId: { type: new NonNull(StringType) }
   },
-  async resolve(parent, { locale }) {
+  async resolve(parent, { locale, siteId }) {
     if (!locales.includes(locale)) {
       throw new Error(`Locale '${locale}' not supported`);
     }
-    console.log("mesage: " + MESSAGES_DIR);
+    console.log("Request Language data for siteId : " + join(MESSAGES_DIR, `${locale}.json`));
+    
     let localeData;
     try {
       localeData = await readFile(join(MESSAGES_DIR, `${locale}.json`));

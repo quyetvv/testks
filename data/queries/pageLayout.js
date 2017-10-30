@@ -15,6 +15,7 @@ const pageLayoutType = new ObjectType({
   name: 'PageLayoutType',
   fields: {
     content: { type: StringType },    
+    css : {type : StringType}
   },
 });
 
@@ -35,6 +36,7 @@ const pageLayoutQuery = {
   resolve: (value, { pageType }) => {  
     console.log("request page layout for: " + pageType);
     return {
+      css: 'region:{background: "#fff", font: "italic"}',
       content: `{
         regions: [
           {
@@ -42,18 +44,18 @@ const pageLayoutQuery = {
             css: 'customer-header',
             blocks: [
               {
-                blockType: 'RightMenu',
-                id: '',
+                blockType: 'ChannelList',
+                id: '1',
                 data: ''
               },
               {
                 blockType: 'LeftMenu',
-                id: '',
+                id: '2',
                 data: ''
               },
               {
                 blockType: 'LanguageSwicher',
-                id: '',
+                id: '3',
                 data: ''
               }
             ]
